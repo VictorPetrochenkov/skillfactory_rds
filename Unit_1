@@ -281,24 +281,25 @@ print('Вопрос 15. Фильмы с каким актером принесл
 data_2012 = data[data.release_year == 2012]
 
 # Формируем список всех актёров снимавшихся в фильмах вышедших только 2012 году
-list_actors = list(('|'.join([str(x) for x in data_2012['cast']])).split('|'))
+list_actors_2012 = list(('|'.join([str(x) for x in data_2012['cast']])).split('|'))
 
 # Группируем список в словарь c, ключём которого является имена актёраов, а значением - количество фильмов (дата выхода 2012 год), в которых он снимался.
-c = list_to_dict(list_actors)
+c = list_to_dict(list_actors_2012)
 
 # Оставляем в list_actors уникальные значения элементов - имена актёров без повторений
-list_actors = c.keys()
+list_actors_2012 = c.keys()
 
 t = 0 # Контрольная переменная, по максимальному значению которой будет определятся актёр
 
 # В цикле формируем суммы - summa_revenue кассовых выручек по столбцу revenue датасета data_2012,
 # получаемого для каждого актёра из списка list_actors
 # Контрольной переменной присваетивается большее значение summa_revenue в цикле и имя директора - actors.
-for x in list_actors:
+for x in list_actors_2012:
     summa_revenue = data_2012[data_2012.cast.str.contains(x,na=False)]['revenue'].sum()
     if summa_revenue > t:
         t = summa_revenue
         actors = x
+print(actors)
 print('Ответ на вопрос № 15',actors)
 
 # Фиксируем ответ на вопрос № 15
