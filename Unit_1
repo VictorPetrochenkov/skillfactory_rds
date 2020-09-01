@@ -9,17 +9,6 @@ import collections
 # data = pd.read_csv('movie_bd_v5.csv')
 data = pd.read_csv('D:\Материал мой\Обучение Pyton\Million\\movie_bd_v5.csv')
 # Выводим информацию по датасету
-print(data.info())import numpy as np
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-from collections import Counter
-import collections
-
-# Загружаем датасет
-# data = pd.read_csv('movie_bd_v5.csv')
-data = pd.read_csv('D:\Материал мой\Обучение Pyton\Million\\movie_bd_v5.csv')
-# Выводим информацию по датасету
 print(data.info())
 
 # Выводим общие статистические параметры датасета
